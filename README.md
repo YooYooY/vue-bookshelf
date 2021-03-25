@@ -34,12 +34,7 @@ npm run build
 - [x] 生命周期函数
 - [x] v-model 多选项绑定
 
-组合式函数
-
-- [x] use-async 异步加载
-- [x] use-pages 分页控制
-
-## Vue 3 store without Vuex
+## provide/inject代替vuex
 
 Vue3 中新增的一对api，`provide` 和 `inject`，可以很方便的管理应用的全局状态，有兴趣可以参考下这篇文章：[Vue 3 store without Vuex](https://oshap1044.medium.com/how-did-i-create-a-global-store-in-vue-3-5e44e680548b)
 
