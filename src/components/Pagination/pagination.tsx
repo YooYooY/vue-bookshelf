@@ -1,4 +1,4 @@
-import { computed, defineComponent, ref } from 'vue'
+import { defineComponent } from 'vue'
 import './pagination.scss'
 
 export default defineComponent({
@@ -16,23 +16,23 @@ export default defineComponent({
       type: Number,
       default: 1,
     },
-    hideOnSinglePage:{
+    hideOnSinglePage: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   emits: {
     currentChange: (currentPage: number) => true,
     'update:currentPage': (currentPage: number) => true,
   },
   setup(props, { emit }) {
-    let pageNum = Math.ceil(props.total / props.pageSize)
-    
-    if (props.hideOnSinglePage && pageNum<=1) {
-      return ()=>null
+    const pageNum = Math.ceil(props.total / props.pageSize)
+
+    if (props.hideOnSinglePage && pageNum <= 1) {
+      return () => null
     }
 
-    let paginations: number[] = []
+    const paginations: number[] = []
     for (let i = 1; i <= pageNum; i++) {
       paginations.push(i)
     }

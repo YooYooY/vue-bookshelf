@@ -8,12 +8,12 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, onMounted } from "vue";
+import { computed, defineComponent } from "vue";
 import { useRoute } from "vue-router";
 import { useBookListInject } from "./context";
 
 export default defineComponent({
-  setup(props) {
+  setup() {
     const route = useRoute();
 
     const { booksAvaluable, finishedBooks } = useBookListInject();
@@ -22,6 +22,7 @@ export default defineComponent({
       if(!route.name) return 0;
       if(route.name === "all") return booksAvaluable.value.length;
       if(route.name === "finished") return finishedBooks.value.length;
+      return 0;
     });
     
     return {

@@ -16,7 +16,7 @@ const BookSymbol = Symbol()
 
 export const useBookListProvide = () => {
   // 全部图书
-  let books = ref<Books>([])
+  const books = ref<Books>([])
   const setBooks = (value: Books) => {
     books.value = value;
   }
